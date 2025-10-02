@@ -6,12 +6,6 @@ function backarriba(){
         });       
 };
 
-setTimeout(function() {
-    var videoContainer = document.getElementById('videoContainer');
-    videoContainer.classList.add('hidden');
-}, 46000); // 
-
-
 
 var btn = document.getElementById("inicio"),
     informacion = document.getElementById("infomacion"),
@@ -20,18 +14,17 @@ var btn = document.getElementById("inicio"),
 
     function inicio() {
         backarriba();
-        conta=0;
+
        
     }
 
     function arriba() {
         backarriba();
-        conta=0;
+
        
     }
 
     function piscina() {
-        document.getElementById("side").style.display = "none";
         document.getElementById("piscina").scrollIntoView();
         conta=0;
      
@@ -39,7 +32,6 @@ var btn = document.getElementById("inicio"),
      }
 
      function ubicacion() {
-        document.getElementById("side").style.display = "none";
         document.getElementById("ubicacion").scrollIntoView();
         conta=0;
      
@@ -48,26 +40,21 @@ var btn = document.getElementById("inicio"),
 
 
 function contactanos() {
-   document.getElementById("side").style.display = "none";
    document.getElementById("redes").scrollIntoView();
-   conta=0;
+   
 
     
 }
 
 function eventos() {
-    document.getElementById("side").style.display = "none";
     document.getElementById("eventos").scrollIntoView();
-    conta=0;
  
      
  }
 
 function reserva() {
     document.getElementById("screen4").style.display = "block";
-    document.getElementById("side").style.display = "none";
     document.getElementById("screen4").scrollIntoView();
-    conta=0;
   
         
 }
@@ -75,46 +62,19 @@ function reserva() {
 
 function reservasalir() {
     document.getElementById("screen4").style.display = "none";
-    document.getElementById("side").style.display = "none";
     document.getElementById("screen4").scrollIntoView();
-    conta=0;
+
   
         
 }
 
-
-//   boton atras
-
-
-       //    menu laterl 
-
-       var btns = document.getElementById("inicio"),
-       informacion = document.getElementById("infomacion"),
-       conta=0;
    
-       function sidebar()  {
-   
-           if (conta==0) {
-               document.getElementById("side").style.display = "block";
-               conta=1;
-           }
-           else{
-               document.getElementById("side").style.display = "none";
-               conta=0;
-           }
-           }
-   
-           function cerrarside() {
-               document.getElementById("side").style.display = "none";
-               conta=0;
-               
-           }
    
            // llevar cerrar side automatico
    
            document.querySelector('.tarjeta').addEventListener('click',()=>{
-               document.getElementById("side").style.display = "none";
-               conta=0;
+                document.getElementById("side").classList.remove("active");
+                conta=0;
                });
 
    //    menu laterl 
@@ -126,20 +86,23 @@ function reservasalir() {
     function sidebar()  {
 
         if (conta==0) {
-            document.getElementById("side").style.display = "block";
+            document.getElementById("side").classList.add("active");
             conta=1;
         }
-        else{
-            document.getElementById("side").style.display = "none";
-            conta=0;
-        }
-        }
+         else {
+        
+        document.getElementById("side").classList.remove("active");
+        conta=0;
+    }
+}
 
         function cerrarside() {
-            document.getElementById("side").style.display = "none";
+            document.getElementById("side").classList.remove("active");
             conta=0;
             
         }
+
+
 
         
 //formulario>
@@ -147,7 +110,7 @@ function reservasalir() {
             e.preventDefault();
           
             //INGRESE UN NUMERO DE WHATSAPP VALIDO AQUI:
-            let telefono = "573998968077";
+            let telefono = "593962618736";
           
             let cliente = document.querySelector("#cliente").value;
             let edad = document.querySelector("#edad").value;
@@ -159,8 +122,8 @@ function reservasalir() {
             resp.classList.remove("fail");
             resp.classList.remove("send");
           
-            let url = `https://api.whatsapp.com/send?phone=593992835380&text=
-                  *Hostería los Cedros*%0A
+            let url = `https://api.whatsapp.com/send?phone=${telefono}&text=
+                  *Next Adventure*%0A
                   *Datos de la Reserva*%0A
                   *Nombre*%0A
                   ${cliente}%0A
@@ -170,7 +133,7 @@ function reservasalir() {
                   ${fecha}%0A
                   *Hora de Entrada*%0A
                   ${hora}%0A
-                  *Alojamiento*%0A
+                  *Paquete*%0A
                   ${modulos}%0A`;
           
             if (cliente === "" || edad === "" || fecha === "" || hora === "") {
@@ -192,7 +155,7 @@ function reservasalir() {
             Swal.fire({
             showCloseButton: true,
             icon: 'success',
-            title: 'Tarjeta Digital',
+            title: 'Webmaster',
             text: 'Link Copiado a Portapapeles',
             footer: 'CliconlineStudios'
             });
@@ -205,8 +168,8 @@ function reservasalir() {
 // share tarjeta
 
 const shareData2 = {
-    title: 'Hostería los Cedros',
-    text: 'Alojamiento en Mindo',
+    title: 'Next adventure',
+    text: 'Agencia de Viajes',
     url: 'https://hosterialoscedrosdemindo.blogspot.com',
     }
     

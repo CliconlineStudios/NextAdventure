@@ -74,7 +74,7 @@ lottie-player {
 	position: fixed;
 	z-index: 1000; 
 	padding: 8px 4px;
-	left: 2px;
+	right: 2px;
 	
 		
 }
@@ -86,27 +86,51 @@ lottie-player {
 	font-size: 19px;
 	padding: 3px 9px;
 	border-radius: 10px;
-	background: rgb(0, 162, 255);
+	background: rgb(255, 89, 0);
 	animation: pulse 1.5s ;	
 	text-decoration: none;
 	animation: pulse2 1.7s ;	
 }
 
-
-
 .side {
-	width: 40%;
-	background-color: rgba(255, 255, 255, 0.541);
-	backdrop-filter: blur(10px);
-	border: solid 1px rgba(255, 255, 255, 0.5);
-	border-radius: 10px;
-	display: none;
-	padding: 10px 0px;
-	position: fixed;
-	margin: 9px 0px;
-	box-shadow: 1px 1px 5px #ffffffc4;
+    width: 40%;
+    background-color: rgba(255, 255, 255, 0.541);
+    backdrop-filter: blur(10px);
+    border: solid 1px rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 10px 0px;
+    box-shadow: 1px 1px 5px #ffffffc4;
+    position: fixed;
+    top: 45px;
+    right: -45%;         /* escondido fuera de la pantalla */
+    margin: 0;
+    height: 40%;
+    transition: right 0.4s ease;  /* transición para entrada y salida */
+    z-index: 1000;
 }
 
+/* Estado visible */
+.side.active {
+    right: 5px;  /* aparece con movimiento */
+}
+
+/* Fondo oscuro */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    z-index: 900;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
 
 .side a{
 	color: #000000f1;
@@ -136,7 +160,7 @@ lottie-player {
 
 
 .fotop{
-	background-image: url('../img/jacuzzi.png');
+	background-image: url('../img/culumpio.jpg');
     border: 1px solid #ccc; /* Borde opcional */
 	background-size: cover; /* Ajusta la imagen para cubrir todo el div */
     background-position: center; /* Centra la imagen en el div */
@@ -188,6 +212,18 @@ lottie-player {
     vertical-align: top;
 	padding: 150px 0px 0px 0px;
 	text-shadow: 4px 4px 6px #000000; /* desplazamiento horizontal, desplazamiento vertical, desenfoque, color */
+
+}
+
+
+.tituloh3 {
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+	color: rgb(255, 255, 255);
+	font-weight: bold;
+	font-family:'Open Sans',Sans-serif, Arial, Helvetica;
+    vertical-align: top;
+
 
 }
 
@@ -403,7 +439,7 @@ lottie-player {
 
 
 .areas .tarjeta1 {
- background:  rgba(223, 147, 76, 0.93);
+ background-color: rgba(11, 238, 52, 0.541);
  border-radius: 10px;
 }
 
@@ -1147,7 +1183,7 @@ footer .rango {
 .navi2 {
 	position: fixed;
 	width: 100%;
-	text-align: right;
+	text-align: left;
 	text-decoration: none;
 	width: 100%;
 	background-color: rgb(255, 255, 255);
