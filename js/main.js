@@ -175,7 +175,7 @@ function reservasalir() {
 
 const shareData = {
     title: 'Next Adventure WebMater ',
-    text: 'Agencia De Viajes',
+    text: 'Agencia de Viajes',
     url: 'https://nextadventureagenciadeviajes.blogspot.com'
   };
   
@@ -213,4 +213,5 @@ window.onscroll = function() {
         scrollButton.style.display = "none";
     }
 };
+
 
