@@ -24,16 +24,18 @@ var btn = document.getElementById("inicio"),
        
     }
 
-    function piscina() {
-        document.getElementById("piscina").scrollIntoView();
-        conta=0;
+    function serviciosA() {
+        document.getElementById("servicios").scrollIntoView();
+        cerrarside();
+       
      
          
      }
 
      function ubicacion() {
         document.getElementById("ubicacion").scrollIntoView();
-        conta=0;
+        cerrarside();
+        
      
          
      }
@@ -41,6 +43,7 @@ var btn = document.getElementById("inicio"),
 
 function contactanos() {
    document.getElementById("redes").scrollIntoView();
+   cerrarside();
    
 
     
@@ -48,6 +51,7 @@ function contactanos() {
 
 function eventos() {
     document.getElementById("eventos").scrollIntoView();
+    cerrarside();
  
      
  }
@@ -55,6 +59,7 @@ function eventos() {
 function reserva() {
     document.getElementById("screen4").style.display = "block";
     document.getElementById("screen4").scrollIntoView();
+    cerrarside();
   
         
 }
@@ -63,6 +68,7 @@ function reserva() {
 function reservasalir() {
     document.getElementById("screen4").style.display = "none";
     document.getElementById("screen4").scrollIntoView();
+    cerrarside();
 
   
         
@@ -165,29 +171,28 @@ function reservasalir() {
     
     
         
-// share tarjeta
+/// nuevo share
 
-const shareData2 = {
-    title: 'Next adventure',
-    text: 'Agencia de Viajes',
-    url: 'https://hosterialoscedrosdemindo.blogspot.com',
-    }
-    
-    
-    // Share must be triggered by "user activation"
-   
-    var urltarjeta = 'https://hosterialoscedrosdemindo.blogspot.com'
+const shareData = {
+    title: 'Next Adventure WebMater ',
+    text: 'Agencia De Viajes',
+    url: 'https://nextadventureagenciadeviajes.blogspot.com'
+  };
   
-    function sharetarjeta(){
+  
+  // Share must be triggered by "user activation"
+
+  function shareplus(){
     if (navigator.share) {
         navigator
-       .share(shareData2)
+       .share(shareData)
        .then(() => console.log('correcto'))
        .catch(error => console.log ('error sharing',error) );
     }else {
         sharetj();
     }
-    } 
+ };
+
 
     document.addEventListener("DOMContentLoaded", function() {
         const tituloh = document.querySelector('.tituloh');

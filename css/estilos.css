@@ -587,16 +587,16 @@ lottie-player {
 
 @keyframes changeImage {
 	0%, 23% {
-	  content: url(../img/cama3.jpg);
+	  content: url(../img/cayopin.jpeg);
 	}
 	25%, 45% {
-	  content: url(../img/cama2.jpg);
+	  content: url(../img/bicis.png);
 	}
 	50%, 70% {
 	  content: url(../img/camas.jpg);
 	}
 	75%, 100% {
-	  content: url(../img/cedros2.jpeg);
+	  content: url(../img/iglesia.jpg);
 	}
   }
 /* ----- ----- areas2 ----- ----- */
